@@ -1,0 +1,18 @@
+
+h1 {
+    margin-bottom: 20px;
+  }
+  
+  mat-dialog-content {
+    margin-bottom: 20px;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button {
+    margin-right: 8px;
+  }
+  

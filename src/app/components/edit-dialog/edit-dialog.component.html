@@ -1,0 +1,78 @@
+<h1 mat-dialog-title>Edit</h1>
+<mat-dialog-content>
+    <form>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="inputFullName4">Full Name</label>
+                <input type="text" class="form-control" id="inputFullName4" [value]="selectedEntry.fullName">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" [value]="selectedEntry.email" >
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="inputJob">Job</label>
+            <select formControlName="inputJob" id="inputJob" class="form-control">
+              <option *ngFor="let job of jobs" [value]="job.jobId" [selected]="job.title === selectedEntry.jobTitle">
+                {{ job.title }}
+              </option>
+              <option (click)="openJobDialog()">Add Job</option>
+            </select>
+          </div>
+          
+          
+          
+            <div class="form-group col-md-6">
+              <label for="inputDepartment">Department</label>
+              <select formControlName="inputDepartment" id="inputDepartment" class="form-control">
+                <option *ngFor="let department of departments" [value]="department.departmentId">{{ department.name }}</option>
+                <option (click)="openDepartmentDialog()">Add Department</option>
+              </select>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="inputMobileNumber4">Mobile Number</label>
+                <input type="text" class="form-control" id="inputMobileNumber4" [value]="selectedEntry.mobileNumber">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputAddress4">Address</label>
+                <input type="text" class="form-control" id="inputAddress4" [value]="selectedEntry.address">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="inputage">Age</label>
+                <input type="text" class="form-control" id="inputage" [value]="selectedEntry.age">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputDate">Date of Birth</label>
+                <input type="text" class="form-control" id="inputDate" [value]="selectedEntry.dateOfBirth">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="custom-file">
+              <label for="validatedCustomFile">Photo</label>
+              <label class="custom-file-label" for="validatedCustomFile">{{ selectedFileName || 'Choose file...' }}
+                <input type="file" class="custom-file-input" id="validatedCustomFile" required (change)="onFileSelected($event)">
+              </label>
+            </div>
+          </div>
+ 
+       
+    </form>
+
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onAddJob()">Ok</button>
+  <button mat-raised-button color="warn" (click)="onClose()">Cancel</button>
+</div>

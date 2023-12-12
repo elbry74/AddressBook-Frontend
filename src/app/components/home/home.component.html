@@ -1,0 +1,124 @@
+
+
+  <section class="info-books">
+    <div class="container">
+        <div class="col-12 text-center mt-5 ">
+
+            <h1>Address Book</h1>
+
+        </div>
+
+
+        <div class="action-btns  text-center ">
+            <div class="row">
+                <div class="col-lg-6  col-sm-6 col-md-6">
+                  <button class="btn btn-primary" (click)="GoToAddEntryPage()">Add New Entry</button>
+                </div>
+
+
+                <div class="col-lg-6 col-sm-6 col-md-6">
+                  <button class="btn btn-primary" (click)="exportToExcel()">Export To Excel</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="info-data mt-5 text-center">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 col-md-6 ">
+
+                    <label>Min Date:</label>
+                    <input type="date" id="minDate" [(ngModel)]="dateRange.minDateOfBirth" />
+
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-md-6 ">
+                    <label>Max Date:</label>
+                    <input type="date" id="maxDate" [(ngModel)]="dateRange.maxDateOfBirth" />
+
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-md-12 ">
+
+                  <button type="button" (click)="filterByDateRange()">Filter by Date Range</button>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="info-search text-center mt-4">
+          <input type="text" [(ngModel)]="searchTerm" />
+          <button type="button" (click)="search()">Search</button>
+
+        </div>
+
+
+
+
+        <div class="info-table bg-danger  text-center  mt-4">
+            <div class="table-responsive">
+
+                <table class="table ">
+                    <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Full Name</th>
+                          <th>Job</th>
+                          <th>Department</th>
+                          <th>Mobile Number</th>
+                          <th>Date of Birth </th>
+                          <th>Address</th>
+                          <th>Email</th>
+                          <th>Age</th>
+                          <th>Photo</th>
+                          <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let entry of entries">
+                        <td>{{ entry.id }}</td>
+                        <td>{{ entry.fullName }}</td>
+                        <td>{{ entry.jobTitle }}</td>
+                        <td>{{ entry.departmentName }}</td>
+                        <td>{{ entry.mobileNumber }}</td>
+                        <td>{{ entry.dateOfBirth }}</td>
+                        <td>{{ entry.address }}</td>
+                        <td>{{ entry.email }}</td>
+                        <td>{{ entry.age }}</td>
+                        <td>{{ entry.photo }}</td>
+                     
+
+                            <td >
+                                <div class="row">
+                                    <div class="col-6 ">
+                                      <button class="btn btn-sm btn-info" (click)="openEditDialog(entry.id)">Edit</button>
+                                    </div>
+                                    <div class="col-6 ">
+                                      <button class="btn btn-sm btn-danger" (click)="deleteEntry(entry.id)">Delete</button>
+
+                                    </div>
+                                    
+                                   
+                                </div>
+                                
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </section>

@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Add Department</h1>
+<mat-dialog-content>
+    <input  [(ngModel)]="DepartmentName" class="form-control" matInput placeholder="Department">
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onAddDepartment()">Add Department</button>
+  <button mat-raised-button color="warn" (click)="onClose()">Cancel</button>
+</div>

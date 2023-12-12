@@ -1,0 +1,102 @@
+
+
+
+.info-books {
+width: 100%;
+height: auto;
+}
+
+.info-books .action-btns  {
+width: 50%;
+height: auto;
+margin: auto;
+margin-top: 25px;
+
+}
+
+.info-books .info-data {
+width: 100%;
+height: auto;
+
+}
+
+.info-books .info-data label {
+
+color: #17a2b8;
+font-size: 18px;
+}
+
+.info-books .info-search  input {
+padding: 3px;
+margin-right: 10px;
+
+}
+
+
+
+
+
+@media (max-width : 750px) {
+
+
+.info-books .action-btns {
+  text-align: center;
+  width: 100%;
+}
+.info-books .action-btns .col-sm-6  {
+  width: 50%;
+  height: auto;
+
+}
+
+.info-books .info-data {
+  text-align: center;
+}
+
+.info-books .info-data label {
+  margin-bottom: 25px;
+}
+
+.info-books .info-data .btn {
+  margin-bottom: 15px;
+  margin-left: 60px;
+}
+
+
+
+
+
+
+
+}
+
+
+
+@media (min-width :751px) and (max-width :950px) {
+
+
+.info-books .action-btns {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  margin-top: 25px;
+}
+.info-books .action-btns .col-sm-6  {
+  width: 50%;
+  height: auto;
+
+}
+
+.info-books .info-data {
+  text-align: center;
+}
+
+.info-books .info-data label {
+  margin-bottom: 40px;
+}
+
+.info-books .info-data .btn {
+  margin-bottom: 15px;
+  margin-left: 60px;
+}
+}
